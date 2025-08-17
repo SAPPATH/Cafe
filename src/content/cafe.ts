@@ -1,4 +1,4 @@
-// src/content/cafe.ts
+// src/content/cafe.ts  ← 拡張子は .ts（.tsx ではない）
 export const brand = {
   red: "#CE1126",
   green: "#2E7D32",
