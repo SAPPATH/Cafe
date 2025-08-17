@@ -1,9 +1,9 @@
-/* --- Tailwind v3 用: 先頭は @tailwind ディレクティブ --- */
+/* Tailwind v3: 先頭は @tailwind ディレクティブ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* 色などのベース変数（必要なら調整してください） */
+/* 任意のベース変数 */
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -17,13 +17,8 @@
 }
 
 /* ベーススタイル */
-html, body {
-  height: 100%;
-}
-
+html, body { height: 100%; }
 body {
   background: var(--background);
   color: var(--foreground);
 }
-
-/* 追加のグローバルCSSがあれば下にどうぞ */
