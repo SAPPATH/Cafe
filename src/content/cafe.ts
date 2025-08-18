@@ -1,4 +1,4 @@
-// src/content/cafe.ts
+// src/content/cafe.ts（全置換用：page.tsxの旧参照にも新構造にも両対応）
 export const brand = {
   name: "EFLAO CAFE",
   red: "#CE1126",
@@ -23,7 +23,7 @@ export const copy = {
     text: "ボラベン高原のラオスコーヒーを中心に、適正価格・正しいストーリーで提供します。",
   },
 
-  // ↓↓↓ 旧 page.tsx 互換用（これが無くてコケています）
+  // 互換用（旧 page.tsx が参照）
   heroTitle: "EFLAO CAFE",
   heroLead: "ラオスの香りを日常に。フェアトレードの豆と、やさしいおやつ。",
 };
