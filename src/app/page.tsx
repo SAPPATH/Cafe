@@ -1,81 +1,64 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import { Coffee, MapPin, Clock, Phone, Instagram, ArrowRight } from "lucide-react";
 import { brand, copy, links } from "@/content/cafe";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white text-gray-900">
-      {/* Hero Section */}
-      <section className="relative w-full h-[60vh] bg-gray-100 flex items-center justify-center">
+    <main className="min-h-screen">
+      {/* Hero */}
+      <section className="relative h-[56vh] md:h-[68vh] w-full">
+        {/* 背景画像（無ければ削除可） */}
         <Image
-          src="/hero.jpg"
-          alt="EFLAO CAFE"
+          src="/window.svg"
+          alt="hero"
           fill
-          className="object-cover"
           priority
+          className="object-cover opacity-20"
         />
         <div className="absolute inset-0 bg-black/40 flex items-center justify-center text-center text-white px-4">
           <div>
-            <h1 className="text-4xl font-bold mb-4">{copy.heroTitle}</h1>
-            <p className="text-lg">{copy.heroLead}</p>
+            <h1 className="text-4xl font-bold mb-4">
+              {copy.hero.title}
+            </h1>
+            <p className="text-lg">{copy.hero.subtitle}</p>
           </div>
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="max-w-5xl mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold mb-6">About Us</h2>
-        <ul className="list-disc pl-5 space-y-2">
-          {copy.introBullets.map((bullet, i) => (
-            <li key={i}>{bullet}</li>
-          ))}
-        </ul>
-      </section>
+      {/* About */}
+      <section className="max-w-5xl mx-auto px-4 py-14">
+        <h2 className="text-2xl font-semibold">{copy.about.title}</h2>
+        <p className="mt-3 text-zinc-700">{copy.about.text}</p>
 
-      {/* Menu Highlights */}
-      <section className="bg-gray-50 py-16">
-        <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-6">Menu Highlights</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {copy.menuHighlights.map((item, i) => (
-              <div key={i} className="bg-white shadow rounded-lg overflow-hidden">
-                <Image
-                  src={`/menu-${i + 1}.jpg`}
-                  alt={item.name}
-                  width={400}
-                  height={300}
-                  className="w-full h-48 object-cover"
-                />
-                <div className="p-4">
-                  <h3 className="font-bold text-lg">{item.name}</h3>
-                  <p className="text-sm text-gray-500">{item.price}</p>
-                  <p className="mt-2 text-sm">{item.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className="mt-6 flex gap-3">
+          <Link
+            href={links.menu}
+            className="px-4 py-2 rounded-md bg-black text-white text-sm"
+          >
+            メニューを見る
+          </Link>
+          <Link
+            href={links.contact}
+            className="px-4 py-2 rounded-md border text-sm"
+          >
+            お問い合わせ
+          </Link>
+          <a
+            href={links.instagram}
+            target="_blank"
+            rel="noreferrer"
+            className="px-4 py-2 rounded-md border text-sm"
+          >
+            Instagram
+          </a>
         </div>
       </section>
 
-      {/* Contact */}
-      <section className="max-w-5xl mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold mb-6">Contact</h2>
-        <div className="space-y-4">
-          <p><MapPin className="inline-block mr-2" /> {copy.address}</p>
-          <p><Phone className="inline-block mr-2" /> {copy.tel}</p>
-          <p><Clock className="inline-block mr-2" /> 営業時間：</p>
-          <ul className="pl-6 list-disc">
-            {copy.hours.map((h, i) => (
-              <li key={i}>{h.label}：{h.value}</li>
-            ))}
-          </ul>
-          <p className="mt-4">
-            <Instagram className="inline-block mr-2" />
-            <Link href={links.instagram} target="_blank">Instagram</Link>
-          </p>
-        </div>
-      </section>
+      <footer className="border-t py-10 text-center text-sm text-zinc-500">
+        © {new Date().getFullYear()} {brand.name}
+      </footer>
     </main>
   );
 }
