@@ -19,9 +19,7 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-black/40 flex items-center justify-center text-center text-white px-4">
           <div>
-            <h1 className="text-4xl font-bold mb-4">
-              {copy.hero.title}
-            </h1>
+            <h1 className="text-4xl font-bold mb-4">{copy.hero.title}</h1>
             <p className="text-lg">{copy.hero.subtitle}</p>
           </div>
         </div>
@@ -33,24 +31,13 @@ export default function Home() {
         <p className="mt-3 text-zinc-700">{copy.about.text}</p>
 
         <div className="mt-6 flex gap-3">
-          <Link
-            href={links.menu}
-            className="px-4 py-2 rounded-md bg-black text-white text-sm"
-          >
+          <Link href={links.menu} className="px-4 py-2 rounded-md bg-black text-white text-sm">
             メニューを見る
           </Link>
-          <Link
-            href={links.contact}
-            className="px-4 py-2 rounded-md border text-sm"
-          >
+          <Link href={links.contact} className="px-4 py-2 rounded-md border text-sm">
             お問い合わせ
           </Link>
-          <a
-            href={links.instagram}
-            target="_blank"
-            rel="noreferrer"
-            className="px-4 py-2 rounded-md border text-sm"
-          >
+          <a href={links.instagram} target="_blank" rel="noreferrer" className="px-4 py-2 rounded-md border text-sm">
             Instagram
           </a>
         </div>
