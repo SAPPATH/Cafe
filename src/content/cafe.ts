@@ -6,6 +6,11 @@ export const brand = {
 };
 
 export const copy = {
+  // --- page.tsx が参照している旧キー（互換用）---
+  heroTitle: "ラオスから届く一杯で、未来を切り拓く",
+  heroLead: "フェアトレードコーヒーをもっと身近に",
+
+  // --- 新しい構造（今後こちらで整備するならこちらを使ってOK）---
   hero: {
     title: "ラオスから届く一杯で、未来を切り拓く",
     subtitle: "フェアトレードコーヒーをもっと身近に",
@@ -17,7 +22,7 @@ export const copy = {
 };
 
 export const links = {
-  instagram: "https://instagram.com/eflao",
+  instagram: "https://instagram.com/eflao", // あれば実URLに変更
   contact: "/contact",
   menu: "/menu",
 };
